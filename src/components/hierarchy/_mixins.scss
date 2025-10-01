@@ -1,0 +1,68 @@
+// Mixins for Hierarchy Chart
+
+// Gradient background mixin
+@mixin gradient-bg($color, $opacity: 0.8) {
+  background: linear-gradient(135deg, $color, rgba($color, $opacity));
+}
+
+// Hover gradient mixin
+@mixin hover-gradient($color, $opacity: 0.9, $hover-opacity: 0.7) {
+  &:hover {
+    background: linear-gradient(135deg, rgba($color, $opacity), rgba($color, $hover-opacity));
+  }
+}
+
+// Node base styles mixin
+@mixin node-base($min-width: 120px) {
+  display: flex;
+  align-items: center;
+  color: #374151;
+  border-radius: 0.2em;
+  box-shadow: 0 0.05em 0.05em 0.2em rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 0.5em;
+  min-width: $min-width;
+  min-height: 40px;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+// Node hover effect mixin
+@mixin node-hover($scale: 1.05) {
+  &:hover {
+    background-color: #f3f4f6;
+    transform: scale($scale);
+    box-shadow: 0 0.1em 0.2em 0.3em rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Executive node mixin
+@mixin executive-node($color, $foreground-color, $min-width: 130px) {
+  @include gradient-bg($color);
+  color: $foreground-color;
+  border-color: $color;
+  font-weight: 600;
+  min-width: $min-width;
+
+  @include hover-gradient($color);
+  &:hover {
+    transform: scale(1.06);
+  }
+}
+
+// Staff node mixin
+@mixin staff-node($min-width: 120px) {
+  background: #ffffff;
+  color: #374151;
+  border-color: #e5e7eb;
+  min-width: $min-width;
+
+  &:hover {
+    background: #f3f4f6;
+    color: #1f2937;
+    transform: scale(1.03);
+  }
+}

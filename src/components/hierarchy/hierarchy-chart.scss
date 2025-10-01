@@ -1,0 +1,169 @@
+// Import mixins
+@use './mixins' as *;
+
+// Hierarchy Chart Styles
+.react-hierarchy-container {
+  display: flex;
+
+  .react-hierarchy-root-vertical {
+    display: flex;
+    margin-bottom: 2%;
+    width: 100%;
+  }
+
+  .react-hierarchy-root-horizontal {
+    display: flex;
+    width: 100%;
+  }
+
+  .ngx-hierarchy-border {
+    border: 1px solid #e5e7eb;
+  }
+}
+
+.react-hierarchy-node-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  &-vertical {
+    flex-direction: column;
+  }
+
+  .react-hierarchy-node {
+    display: flex;
+    align-items: center;
+
+    .node-line {
+      background-color: #e5e7eb;
+
+      &-horizontal {
+        width: 1em;
+        height: 0.1em;
+      }
+
+      &-vertical {
+        height: 1em;
+        width: 0.1em;
+      }
+    }
+
+    .node-box {
+      @include node-base();
+      @include node-hover();
+    }
+
+    &-horizontal {
+      padding: 1em 0;
+    }
+
+    &-vertical {
+      flex-direction: column;
+      padding: 0 1em;
+    }
+  }
+
+  .react-hierarchy-children {
+    display: flex;
+    flex: 1;
+
+    &-horizontal {
+      flex-direction: column;
+    }
+
+    .children-container {
+      display: flex;
+
+      &:first-child > .lines-container .lines:first-child {
+        background-color: transparent;
+      }
+
+      &:last-child > .lines-container .lines:last-child {
+        background-color: transparent;
+      }
+
+      &-vertical {
+        flex-direction: column;
+      }
+
+      .lines {
+        flex: 1;
+        background-color: #e5e7eb;
+      }
+
+      .lines-container {
+        display: flex;
+
+        &-vertical .lines {
+          height: 0.1em;
+        }
+
+        &-horizontal {
+          flex-direction: column;
+
+          .lines {
+            width: 0.1em;
+            background-color: #e5e7eb;
+          }
+        }
+      }
+
+      .m-line {
+        width: 0.1em;
+        height: 0.1em;
+        background-color: #e5e7eb;
+      }
+    }
+  }
+}
+
+// Custom node type styles using mixins
+.react-hierarchy-node-container .react-hierarchy-node .node-box {
+  // CEO Node
+  &.ceo-node {
+    @include executive-node(#1f2937, #ffffff, 140px);
+    
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  // Executive Nodes (CTO, CFO, COO)
+  &.cto-node,
+  &.cfo-node,
+  &.coo-node {
+    @include executive-node(#6b7280, #ffffff);
+  }
+
+  // Lead Nodes
+  &.lead-node {
+    @include gradient-bg(#3b82f6);
+    color: #ffffff;
+    border-color: #3b82f6;
+    min-width: 125px;
+
+    @include hover-gradient(#3b82f6);
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  // Manager Nodes
+  &.manager-node {
+    @include gradient-bg(#9ca3af);
+    color: #1f2937;
+    border-color: #9ca3af;
+    min-width: 125px;
+
+    @include hover-gradient(#9ca3af);
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  // Engineer and Staff Nodes
+  &.engineer-node,
+  &.staff-node {
+    @include staff-node();
+  }
+}
