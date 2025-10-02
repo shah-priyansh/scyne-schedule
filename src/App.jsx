@@ -13,6 +13,7 @@ import MyExpenses from "@/pages/MyExpenses.jsx";
 import Dashboard from "@/pages/Dashboard.jsx";
 import MyInvoice from "@/pages/MyInvoice.jsx";
 import MyProfile from "@/pages/MyProfile.jsx";
+import Schedule from "@/pages/Schedule.jsx";
 
 const Profile = lazy(() => import('./pages/Profile'))
 const HierarchyChart = lazy(() => import('./pages/HierarchyChart'))
@@ -104,6 +105,11 @@ const routes = [
         path: '/my-profile',
         title: 'My Profile',
         component: MyProfile
+    },
+    {
+        path: '/schedule',
+        title: 'Schedule',
+        component: Schedule
     },
 ]
 

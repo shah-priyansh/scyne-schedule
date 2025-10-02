@@ -151,6 +151,10 @@
 .light-600 {
   color: var(--light-600)!important;
 }
+.td-dis {
+  background-image: url("public/assets/img/dis-bg.png");
+  background-color: #F4F6FA ;
+}
 @layer base {
   * {
     border-color: hsl(var(--border));
