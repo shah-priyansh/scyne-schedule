@@ -7,6 +7,7 @@ import {Calendar} from "lucide-react";
 import {Button} from "@/components/ui/button.jsx";
 import { Search } from 'lucide-react';
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table.jsx";
+
 import {
     Pagination,
     PaginationContent, PaginationEllipsis,
@@ -42,9 +43,11 @@ import {
 import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group.jsx";
 import {Checkbox} from "@/components/ui/checkbox.jsx";
 import { Label } from "@/components/ui/Label";
+
 export default function Schedule() {
     return (
         <div>
+
             <div className={'p-3 sm:p-3 md:py-3 px-5 page-top-head border-b border-light min-h-[74px]'}>
                 <div className={'flex flex-wrap justify-between gap-1 items-center'}>
                     <div className={'text-base sm:text-base md:text-xl font-bold'}>Schedule</div>
@@ -2982,10 +2985,210 @@ export default function Schedule() {
                                 <td className={'border-b border-r last:border-r-0'}></td>
                                 <td className={'border-b border-r last:border-r-0'}></td>
                                 <td colSpan={'2'} className={'align-top p-0 border-b border-r last:border-r-0'}>
-                                    <div className={'p-3 flex justify-between text-xs bg-[#FF518E] text-white'}>
-                                        <div>Paid Time Off</div>
-                                        <div>2 Days</div>
-                                    </div>
+                                    <Dialog>
+                                        <DialogTrigger asChild>
+                                            <div
+                                                className={'w-full p-3 flex justify-between text-xs bg-[#FF518E] text-white cursor-pointer'}>
+                                                <div>Paid Time Off</div>
+                                                <div>2 Days</div>
+                                            </div>
+                                        </DialogTrigger>
+                                        <DialogContent
+                                            className={"bg-white p-0 md:max-w-[600px] gap-0 rounded-xl overflow-hidden"}>
+                                            <DialogHeader
+                                                className={"p-4 border-b-1 border-[var(--border-light)] bg-[var(--light-300)]"}>
+                                                <DialogTitle className={'font-semibold text-[18px]'}>Edit Time off </DialogTitle>
+
+                                            </DialogHeader>
+                                            <Tabs defaultValue="Allocation">
+                                                <DialogDescription
+                                                    className={"p-0 max-h-[80vh] overflow-y-auto"}>
+                                                    <div className={'p-4'}>
+                                                        <div className={'grid grid-cols-2 gap-3'}>
+                                                            <div className={'col-span-1'}>
+                                                                <div className={'mb-1'}>
+                                                                    <label
+                                                                        className={'text-[12px] font-semibold mb-1 block'}>Start
+                                                                        Date</label>
+                                                                    <Input
+                                                                        type="date"
+                                                                        placeholder="Enter valid until"
+                                                                        className="py-2 w-full border-1 border-[var(--border-light)] rounded-xl h-[40px] focus-visible:ring-0"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className={'col-span-1'}>
+                                                                <div className={'mb-1'}>
+                                                                    <label
+                                                                        className={'text-[12px] font-semibold mb-1 block'}>End
+                                                                        Date</label>
+                                                                    <Input
+                                                                        type="date"
+                                                                        placeholder="Enter valid until"
+                                                                        className="py-2 w-full border-1 border-[var(--border-light)] rounded-xl h-[40px] focus-visible:ring-0"
+                                                                    />
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className={'mb-3 text-xs text-[var(--light)]'}>
+                                                            0 days planned
+                                                        </div>
+                                                        <div className={'mb-3'}>
+                                                            <label
+                                                                className={'text-[12px] font-semibold mb-1 block'}>Specific
+                                                                time par
+                                                                day</label>
+                                                            <div className={'grid grid-cols-4 gap-3'}>
+                                                                <div className={'col-span-2'}>
+                                                                    <Input
+                                                                        type="time"
+                                                                        placeholder="Enter valid until"
+                                                                        className="py-2 w-full border-1 border-[var(--border-light)] rounded-xl h-[40px] focus-visible:ring-0"
+                                                                    />
+                                                                </div>
+                                                                <div className={'col-span-2'}>
+                                                                    <Input
+                                                                        type="time"
+                                                                        placeholder="Enter valid until"
+                                                                        className="py-2 w-full border-1 border-[var(--border-light)] rounded-xl h-[40px] focus-visible:ring-0"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className={'mb-3'}>
+                                                            <label
+                                                                className={'text-[12px] font-semibold mb-1 block'}>Time
+                                                                off</label>
+                                                            <Select>
+                                                                <SelectTrigger
+                                                                    className="border-1 border-[var(--border-light)] rounded-xl h-[40px] focus-visible:ring-0 w-full placeholder:text-[var(--light)]"><SelectValue
+                                                                    placeholder="Select "/></SelectTrigger>
+                                                                <SelectContent className={'bg-white'}>
+                                                                    <SelectItem
+                                                                        className="hover:bg-[var(--light-300)] hover:text-[var(--dark)] transition-colors duration-200 cursor-pointer rounded-[8px] m-1"
+                                                                        value="1"> 1</SelectItem>
+                                                                    <SelectItem
+                                                                        className="hover:bg-[var(--light-300)] hover:text-[var(--dark)] transition-colors duration-200 cursor-pointer rounded-[8px] m-1"
+                                                                        value="2"> 2</SelectItem>
+                                                                    <SelectItem
+                                                                        className="hover:bg-[var(--light-300)] hover:text-[var(--dark)] transition-colors duration-200 cursor-pointer rounded-[8px] m-1"
+                                                                        value="3"> 3</SelectItem>
+                                                                </SelectContent>
+                                                            </Select>
+                                                        </div>
+                                                        <div className={'mb-3'}>
+                                                            <label
+                                                                className={'text-[12px] font-semibold mb-1 block'}>Notes</label>
+                                                            <Textarea
+                                                                type="text"
+                                                                placeholder="Type your message here"
+                                                                className="py-2 w-full border-1 border-[var(--border-light)] rounded-xl focus-visible:ring-0"
+                                                            />
+                                                        </div>
+                                                        <div className={'mb-3'}>
+                                                            <label
+                                                                className={'text-[12px] font-semibold mb-1 block'}>Assigned
+                                                                To</label>
+                                                            <Select>
+                                                                <SelectTrigger
+                                                                    className="border-1 border-[var(--border-light)] rounded-xl h-[40px] focus-visible:ring-0 w-full placeholder:text-[var(--light)]"><SelectValue
+                                                                    placeholder="Assigned To"/></SelectTrigger>
+                                                                <SelectContent className={'bg-white'}>
+                                                                    <SelectItem
+                                                                        className="hover:bg-[var(--light-300)] hover:text-[var(--dark)] transition-colors duration-200 cursor-pointer rounded-[8px] m-1"
+                                                                        value="1">Option 1</SelectItem>
+                                                                    <SelectItem
+                                                                        className="hover:bg-[var(--light-300)] hover:text-[var(--dark)] transition-colors duration-200 cursor-pointer rounded-[8px] m-1"
+                                                                        value="2">Option 2</SelectItem>
+                                                                    <SelectItem
+                                                                        className="hover:bg-[var(--light-300)] hover:text-[var(--dark)] transition-colors duration-200 cursor-pointer rounded-[8px] m-1"
+                                                                        value="3">Option 3</SelectItem>
+                                                                </SelectContent>
+                                                            </Select>
+                                                        </div>
+                                                    </div>
+                                                    <DialogFooter
+                                                        className={'flex w-full justify-end gap-2 bg-[var(--light-300)] p-4'}>
+                                                        <DialogClose asChild>
+                                                            <Button
+                                                                className={'btn rounded-xl border-0 light-600 px-4 cursor-pointer'}
+                                                                variant="outline">Cancel</Button>
+                                                        </DialogClose>
+
+
+                                                        <Dialog>
+                                                            <DialogTrigger>
+                                                                <Button type="submit"
+                                                                        className={'border-1 border-[#EF4444] text-[#EF4444] rounded-xl px-4 w-[130px] shadow cursor-pointer'}>Delate Time off</Button>
+                                                            </DialogTrigger>
+                                                            <DialogContent
+                                                                className="bg-white md:max-w-[460px] rounded-3xl overflow-hidden p-0">
+                                                                <DialogDescription
+                                                                    className="p-5 max-h-[80vh] overflow-y-auto">
+                                                                    <div className={'flex gap-3'}>
+                                                                        <div>
+                                                                            <svg width="57" height="57"
+                                                                                 viewBox="0 0 57 57" fill="none"
+                                                                                 xmlns="http://www.w3.org/2000/svg">
+                                                                                <rect x="4.16406" y="4.61719"
+                                                                                      width="48"
+                                                                                      height="48" rx="24"
+                                                                                      fill="#FEE4E2"/>
+                                                                                <rect x="4.16406" y="4.61719"
+                                                                                      width="48"
+                                                                                      height="48" rx="24"
+                                                                                      stroke="#FEF3F2"
+                                                                                      stroke-width="8"/>
+                                                                                <path
+                                                                                    d="M28.1641 24.6172V28.6172M28.1641 32.6172H28.1741M38.1641 28.6172C38.1641 34.14 33.6869 38.6172 28.1641 38.6172C22.6412 38.6172 18.1641 34.14 18.1641 28.6172C18.1641 23.0943 22.6412 18.6172 28.1641 18.6172C33.6869 18.6172 38.1641 23.0943 38.1641 28.6172Z"
+                                                                                    stroke="#EF4444"
+                                                                                    stroke-width="2"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"/>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <div>
+                                                                            <h3 className={'text-sm sm:text-sm md:text-lg text-dark font-bold mb-1'}>Delete
+                                                                                Expense Entry?</h3>
+                                                                            <p className={'light-600'}>Are you
+                                                                                sure you
+                                                                                want to delete this expense
+                                                                                entry? Once
+                                                                                removed, it will no longer
+                                                                                appear in
+                                                                                your project expenses.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </DialogDescription>
+
+                                                                <DialogFooter
+                                                                    className="flex justify-end gap-2 p-4">
+                                                                    <DialogClose asChild>
+                                                                        <Button
+                                                                            className={'btn rounded-xl border-0 light-600 px-4 cursor-pointer'}
+                                                                            variant="outline">Cancel</Button>
+                                                                    </DialogClose>
+                                                                    <Button
+                                                                        className="bg-[var(--danger)] text-white rounded-xl">Yes,
+                                                                        Delete Expense</Button>
+                                                                </DialogFooter>
+                                                            </DialogContent>
+                                                        </Dialog>
+
+                                                        <Button type="submit"
+                                                                className={'text-white bg-[var(--primary2)] rounded-xl px-4 w-[130px] shadow cursor-pointer'}>Create
+                                                            time off</Button>
+                                                    </DialogFooter>
+
+                                                </DialogDescription>
+
+                                            </Tabs>
+                                        </DialogContent>
+
+
+                                    </Dialog>
+
                                 </td>
                                 <td className={'border-b border-r last:border-r-0'}></td>
                                 <td className={'border-b border-r last:border-r-0 td-dis'}></td>
