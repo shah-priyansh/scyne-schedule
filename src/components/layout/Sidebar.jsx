@@ -1,20 +1,8 @@
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Separator } from '@/components/ui/separator'
+import { CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
-import {
-  BanknoteIcon,
-  BarChart3,
-  ChevronDown,
-  ChevronRight,
-  Clock,
-  FileText,
-  PiggyBank,
-  Users
-} from 'lucide-react'
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import * as React from "react";
 
 const Sidebar = () => {
   const location = useLocation()
@@ -22,39 +10,7 @@ const Sidebar = () => {
   const [isOrganizationOpen, setIsOrganizationOpen] = useState(true)
 
 
-  const Dashboard = () => (
-      <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M2.5 5.43945C2.5 4.77641 2.76339 4.14053 3.23223 3.67169C3.70107 3.20285 4.33696 2.93945 5 2.93945H6.875C7.53804 2.93945 8.17393 3.20285 8.64277 3.67169C9.11161 4.14053 9.375 4.77641 9.375 5.43945V7.31445C9.375 7.97749 9.11161 8.61338 8.64277 9.08222C8.17393 9.55106 7.53804 9.81445 6.875 9.81445H5C4.33696 9.81445 3.70107 9.55106 3.23223 9.08222C2.76339 8.61338 2.5 7.97749 2.5 7.31445V5.43945ZM10.625 5.43945C10.625 4.77641 10.8884 4.14053 11.3572 3.67169C11.8261 3.20285 12.462 2.93945 13.125 2.93945H15C15.663 2.93945 16.2989 3.20285 16.7678 3.67169C17.2366 4.14053 17.5 4.77641 17.5 5.43945V7.31445C17.5 7.97749 17.2366 8.61338 16.7678 9.08222C16.2989 9.55106 15.663 9.81445 15 9.81445H13.125C12.462 9.81445 11.8261 9.55106 11.3572 9.08222C10.8884 8.61338 10.625 7.97749 10.625 7.31445V5.43945ZM2.5 13.5645C2.5 12.9014 2.76339 12.2655 3.23223 11.7967C3.70107 11.3278 4.33696 11.0645 5 11.0645H6.875C7.53804 11.0645 8.17393 11.3278 8.64277 11.7967C9.11161 12.2655 9.375 12.9014 9.375 13.5645V15.4395C9.375 16.1025 9.11161 16.7384 8.64277 17.2072C8.17393 17.6761 7.53804 17.9395 6.875 17.9395H5C4.33696 17.9395 3.70107 17.6761 3.23223 17.2072C2.76339 16.7384 2.5 16.1025 2.5 15.4395V13.5645ZM10.625 13.5645C10.625 12.9014 10.8884 12.2655 11.3572 11.7967C11.8261 11.3278 12.462 11.0645 13.125 11.0645H15C15.663 11.0645 16.2989 11.3278 16.7678 11.7967C17.2366 12.2655 17.5 12.9014 17.5 13.5645V15.4395C17.5 16.1025 17.2366 16.7384 16.7678 17.2072C16.2989 17.6761 15.663 17.9395 15 17.9395H13.125C12.462 17.9395 11.8261 17.6761 11.3572 17.2072C10.8884 16.7384 10.625 16.1025 10.625 15.4395V13.5645Z"
-              fill="black" fill-opacity="0.4"/>
-      </svg>
 
-
-  );
-
-  const MySkillsIcon = () => (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clipPath="url(#clip0_7660_4501)">
-          <path d="M10.3086 7.40039H14.6836" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round"
-                strokeLinejoin="round"/>
-          <path d="M5.31641 7.40039L5.94141 8.02539L7.81641 6.15039" stroke="#7C7C7C" strokeWidth="1.5"
-                strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M10.3086 13.2339H14.6836" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round"
-                strokeLinejoin="round"/>
-          <path d="M5.31641 13.2339L5.94141 13.8589L7.81641 11.9839" stroke="#7C7C7C" strokeWidth="1.5"
-                strokeLinecap="round" strokeLinejoin="round"/>
-          <path
-              d="M7.49935 18.3332H12.4993C16.666 18.3332 18.3327 16.6665 18.3327 12.4998V7.49984C18.3327 3.33317 16.666 1.6665 12.4993 1.6665H7.49935C3.33268 1.6665 1.66602 3.33317 1.66602 7.49984V12.4998C1.66602 16.6665 3.33268 18.3332 7.49935 18.3332Z"
-              stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-        <defs>
-          <clipPath id="clip0_7660_4501">
-            <rect width="20" height="20" fill="white"/>
-          </clipPath>
-        </defs>
-      </svg>
-
-  );
   const MyProject = () => (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -84,55 +40,7 @@ const Sidebar = () => {
       </svg>
   );
 
-    const MyExpenses = () => (
-        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M10 6.50977C9.50272 6.50977 9.02581 6.70731 8.67417 7.05894C8.32254 7.41057 8.125 7.88748 8.125 8.38477C8.125 8.88205 8.32254 9.35896 8.67417 9.71059C9.02581 10.0622 9.50272 10.2598 10 10.2598C10.4973 10.2598 10.9742 10.0622 11.3258 9.71059C11.6775 9.35896 11.875 8.88205 11.875 8.38477C11.875 7.88748 11.6775 7.41057 11.3258 7.05894C10.9742 6.70731 10.4973 6.50977 10 6.50977Z"
-                fill="#999999"/>
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M1.25 4.32227C1.25 3.45893 1.95 2.75977 2.8125 2.75977H17.1875C18.05 2.75977 18.75 3.45977 18.75 4.32227V12.4473C18.75 13.3106 18.05 14.0098 17.1875 14.0098H2.8125C2.60731 14.0098 2.40413 13.9694 2.21456 13.8908C2.02499 13.8123 1.85274 13.6972 1.70765 13.5521C1.56255 13.407 1.44746 13.2348 1.36894 13.0452C1.29042 12.8556 1.25 12.6525 1.25 12.4473V4.32227ZM6.875 8.38477C6.875 7.55596 7.20424 6.76111 7.79029 6.17506C8.37634 5.58901 9.1712 5.25977 10 5.25977C10.8288 5.25977 11.6237 5.58901 12.2097 6.17506C12.7958 6.76111 13.125 7.55596 13.125 8.38477C13.125 9.21357 12.7958 10.0084 12.2097 10.5945C11.6237 11.1805 10.8288 11.5098 10 11.5098C9.1712 11.5098 8.37634 11.1805 7.79029 10.5945C7.20424 10.0084 6.875 9.21357 6.875 8.38477ZM15.625 7.75977C15.4592 7.75977 15.3003 7.82561 15.1831 7.94282C15.0658 8.06003 15 8.21901 15 8.38477V8.39143C15 8.73643 15.28 9.01643 15.625 9.01643H15.6317C15.7974 9.01643 15.9564 8.95058 16.0736 8.83337C16.1908 8.71616 16.2567 8.55719 16.2567 8.39143V8.38477C16.2567 8.21901 16.1908 8.06003 16.0736 7.94282C15.9564 7.82561 15.7974 7.75977 15.6317 7.75977H15.625ZM3.75 8.38477C3.75 8.21901 3.81585 8.06003 3.93306 7.94282C4.05027 7.82561 4.20924 7.75977 4.375 7.75977H4.38167C4.54743 7.75977 4.7064 7.82561 4.82361 7.94282C4.94082 8.06003 5.00667 8.21901 5.00667 8.38477V8.39143C5.00667 8.55719 4.94082 8.71616 4.82361 8.83337C4.7064 8.95058 4.54743 9.01643 4.38167 9.01643H4.375C4.20924 9.01643 4.05027 8.95058 3.93306 8.83337C3.81585 8.71616 3.75 8.55719 3.75 8.39143V8.38477Z"
-                  fill="#999999"/>
-            <path
-                d="M1.875 15.2598C1.70924 15.2598 1.55027 15.3256 1.43306 15.4428C1.31585 15.56 1.25 15.719 1.25 15.8848C1.25 16.0505 1.31585 16.2095 1.43306 16.3267C1.55027 16.4439 1.70924 16.5098 1.875 16.5098C6.375 16.5098 10.7333 17.1114 14.875 18.2389C15.8667 18.5089 16.875 17.7739 16.875 16.7223V15.8848C16.875 15.719 16.8092 15.56 16.6919 15.4428C16.5747 15.3256 16.4158 15.2598 16.25 15.2598H1.875Z"
-                fill="black" fill-opacity="0.4"/>
-      </svg>
 
-
-  );
-  const MyInvoice = () => (
-      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-              d="M9.55583 7.68121C9.745 7.53121 9.97 7.42204 10.2108 7.35287V9.68204C9.97311 9.61695 9.75054 9.50566 9.55583 9.35454C9.2275 9.09371 9.10083 8.78704 9.10083 8.51787C9.10083 8.24871 9.2275 7.94204 9.55583 7.68121ZM11.4608 13.4445V11.0912C11.75 11.162 12.0142 11.2812 12.2283 11.442C12.5842 11.7087 12.7108 12.0137 12.7108 12.2679C12.7108 12.522 12.5842 12.827 12.2283 13.0937C11.9986 13.2608 11.7376 13.3807 11.4608 13.4445Z"
-              fill="black" fill-opacity="0.4"/>
-          <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M10.836 1.36768C5.85131 1.36768 1.81079 5.40819 1.81079 10.3929C1.81079 15.3776 5.85131 19.4181 10.836 19.4181C15.8207 19.4181 19.8612 15.3776 19.8612 10.3929C19.8612 5.40819 15.8207 1.36768 10.836 1.36768ZM11.5303 4.83891C11.5303 4.65479 11.4571 4.4782 11.3269 4.348C11.1967 4.21781 11.0201 4.14466 10.836 4.14466C10.6519 4.14466 10.4753 4.21781 10.3451 4.348C10.2149 4.4782 10.1418 4.65479 10.1418 4.83891V5.59425C9.56124 5.69194 9.01412 5.93242 8.54962 6.29405C7.89054 6.81798 7.52028 7.5437 7.52028 8.31015C7.52028 9.07752 7.89054 9.80232 8.55054 10.3262C9.01523 10.6965 9.57062 10.9251 10.1418 11.026V13.7827C9.83427 13.7114 9.54431 13.5789 9.28922 13.393L8.47556 12.782C8.40263 12.7273 8.31963 12.6875 8.23131 12.6649C8.143 12.6423 8.05109 12.6373 7.96083 12.6502C7.77856 12.6762 7.61409 12.7736 7.50362 12.9209C7.39314 13.0682 7.34571 13.2533 7.37175 13.4356C7.39779 13.6179 7.49517 13.7823 7.64247 13.8928L8.45612 14.5038C8.9495 14.874 9.53822 15.1008 10.1418 15.198V15.9469C10.1418 16.131 10.2149 16.3076 10.3451 16.4378C10.4753 16.568 10.6519 16.6411 10.836 16.6411C11.0201 16.6411 11.1967 16.568 11.3269 16.4378C11.4571 16.3076 11.5303 16.131 11.5303 15.9469V15.1971C12.1399 15.1055 12.7182 14.8676 13.2159 14.5038C13.9055 13.9863 14.3072 13.2597 14.3072 12.4756C14.3072 11.6916 13.9055 10.9649 13.2159 10.4475C12.7184 10.0833 12.14 9.84507 11.5303 9.75326V7.01792C11.7987 7.09383 12.0477 7.21509 12.2578 7.38171L12.642 7.68718C12.7862 7.8017 12.97 7.85424 13.153 7.83324C13.336 7.81223 13.5031 7.7194 13.6176 7.57517C13.7321 7.43094 13.7847 7.24712 13.7637 7.06415C13.7427 6.88118 13.6498 6.71405 13.5056 6.59952L13.1215 6.29405C12.6571 5.93289 12.1104 5.69274 11.5303 5.59518V4.83891Z"
-                fill="black" fill-opacity="0.4"/>
-      </svg>
-  );
-    const Endorsement = () => (
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M15 9.16785C16.1625 9.00451 17.0575 8.00785 17.06 6.80035C17.06 5.61035 16.1925 4.62368 15.055 4.43701"
-                stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path
-                d="M16.5352 11.9626C17.661 12.131 18.4468 12.5251 18.4468 13.3376C18.4468 13.8968 18.0768 14.2601 17.4785 14.4885"
-                stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path fillRule="evenodd" clipRule="evenodd"
-                  d="M10.001 12.3071C7.32266 12.3071 5.03516 12.713 5.03516 14.3338C5.03516 15.9538 7.30849 16.3713 10.001 16.3713C12.6793 16.3713 14.966 15.9696 14.966 14.348C14.966 12.7263 12.6935 12.3071 10.001 12.3071Z"
-                  stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path fillRule="evenodd" clipRule="evenodd"
-                  d="M10.0009 9.99391C11.7584 9.99391 13.1834 8.56974 13.1834 6.81141C13.1834 5.05391 11.7584 3.62891 10.0009 3.62891C8.24338 3.62891 6.81838 5.05391 6.81838 6.81141C6.81172 8.56307 8.22588 9.98807 9.97755 9.99391H10.0009Z"
-                  stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path
-                d="M4.99945 9.16784C3.83612 9.00451 2.94195 8.00784 2.93945 6.80034C2.93945 5.61034 3.80695 4.62368 4.94445 4.43701"
-                stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path
-                d="M3.4644 11.9626C2.33857 12.131 1.55273 12.5251 1.55273 13.3376C1.55273 13.8968 1.92273 14.2601 2.52107 14.4885"
-                stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-
-
-    );
     const MyProfile = () => (
         <div className={'w-[16px] h-[16px] overflow-hidden rounded-full'}>
             <img src={"assets/img/profile-img.png"}
@@ -156,62 +64,16 @@ const Sidebar = () => {
         }
     ]
 
-    const dashboardItems = [
-        {
-            id: 'dashboard',
-            label: 'Dashboard',
-            icon: Dashboard,
-            path: '/',
-            isActive: location.pathname === '/'
-        }
-    ]
-    const navigationItems = [
-        {
-            id: 'profile',
-            label: 'My Skills',
-            icon: MySkillsIcon,
-            path: '/profile',
-            isActive: location.pathname === '/profile'
-        }
-    ]
 
-    const organizationItems = [
-        {
-            id: 'summary',
-            label: 'Summary',
-            path: '/summary',
-            isActive: location.pathname === '/summary'
-        },
-        {
-            id: 'my-timesheets',
-            label: 'My Timesheets',
-            path: '/my-timesheets',
-            isActive: location.pathname === '/my-timesheets'
-        },
-        {
-            id: 'pending-approval',
-            label: 'Pending Approval',
-            path: '/pending-approval',
-            isActive: location.pathname === '/pending-approval'
-        },
-        {
-            id: 'approved-timesheets',
-            label: 'Approved',
-            path: '/approved-timesheets',
-            isActive: location.pathname === '/approved-timesheets'
-        },
-
-
-    ]
 
     const projectItems = [
         {
-            id: 'my-projects',
-            label: 'My Projects',
+            id: 'projects',
+            label: 'Projects',
             //icon: Users,
             icon: MyProject,
-            path: '/my-projects',
-            isActive: location.pathname === '/my-projects'
+            path: '/projects',
+            isActive: location.pathname === '/projects'
         },
     ]
     const myprofileItems = [
@@ -224,26 +86,7 @@ const Sidebar = () => {
             isActive: location.pathname === '/my-profile'
         },
     ]
-    const expensesItems = [
-        {
-            id: 'my-expenses',
-            label: 'My Expenses',
-            //icon: Users,
-            icon: MyExpenses,
-            path: '/my-expenses',
-            isActive: location.pathname === '/my-expenses'
-        },
-    ]
-    const invoiceItems = [
-        {
-            id: 'my-invoice',
-            label: 'My Invoice',
-            //icon: Users,
-            icon: MyInvoice,
-            path: '/my-invoice',
-            isActive: location.pathname === '/my-invoice'
-        },
-    ]
+
     const changepasswordItems = [
         {
             id: 'change-password',
@@ -278,8 +121,8 @@ const Sidebar = () => {
     return (
         <div className="w-64 h-full rounded-none flex flex-col bg-white border-r-1 border-light">
 
-            <div className={'border-b-1 border-light'}>
-                <img className='cursor-pointer' onClick={() => navigate('/profile')} src="assets/img/logo-2.png"
+            <div className={'border-b-1 border-light p-3'}>
+                <img className='cursor-pointer' onClick={() => navigate('/schedule')} src="assets/img/logo-2.png"
                      alt="scyne logo" width={300} height={300}/>
             </div>
             <CardContent className="flex-1 p-4 space-y-2">
@@ -299,65 +142,15 @@ const Sidebar = () => {
                     ))}
                 </div>
 
-                {/* Dashboard Section */}
-                <div className="space-y-1">
-                    {dashboardItems.map((item) => (
-                        <NavItem className={'flex gap-2'} key={item.id} item={item}/>
-                    ))}
-                </div>
+     
 
-
-                {/* Organization Section */}
-                <div className="space-y-1">
-                    <Button
-                        variant="ghost"
-                        className="cursor-pointer w-full justify-between px-3 py-2 h-auto font-normal text-gray-600 hover:bg-gradient-to-b hover:from-[#464E7E]/10 hover:to-[#7388BE]/10 hover:text-gray-900 transition-all duration-200 rounded-lg"
-                        onClick={() => setIsOrganizationOpen(!isOrganizationOpen)}
-                    >
-                        <div className="flex gap-2 items-center">
-                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M8.75 2.89288C8.41855 2.8931 8.10073 3.02487 7.86636 3.25924C7.63199 3.49362 7.50022 3.81143 7.5 4.14288H12.5C12.5 3.81136 12.3683 3.49342 12.1339 3.259C11.8995 3.02458 11.5815 2.89288 11.25 2.89288H8.75ZM6.50583 3.04122C6.71179 2.62166 7.03124 2.26824 7.42792 2.02107C7.8246 1.77391 8.28262 1.64289 8.75 1.64288H11.25C11.7175 1.64273 12.1757 1.77368 12.5726 2.02085C12.9694 2.26803 13.289 2.62153 13.495 3.04122C13.9092 3.07622 14.3217 3.11788 14.7333 3.16622C15.9808 3.31038 16.875 4.38288 16.875 5.60705V16.6429C16.875 17.3059 16.6116 17.9418 16.1428 18.4107C15.6739 18.8795 15.038 19.1429 14.375 19.1429H5.625C4.96196 19.1429 4.32607 18.8795 3.85723 18.4107C3.38839 17.9418 3.125 17.3059 3.125 16.6429V5.60705C3.125 4.38205 4.01917 3.31038 5.26667 3.16538C5.6775 3.11788 6.09083 3.07705 6.50583 3.04122Z"
-                        fill="#999999"/>
-                </svg>
-
-
-                Timesheets
-              </div>
-              {isOrganizationOpen ? (
-                  <ChevronDown className="h-4 w-4 "/>
-              ) : (
-                  <ChevronRight className="h-4 w-4 "/>
-              )}
-            </Button>
-
-            {isOrganizationOpen && (
-                <div className="space-y-1">
-                  {organizationItems.map((item) => (
-                      <NavItem className={'ps-10 hover:shadow-none mb-0 hover:text-[var(--primary2)] relative after:w-[2px] after:h-full after:bg-[#EAEAEA] after:absolute after:left-5 hover:after:w-[3px] hover:after:bg-[var(--primary2)]'} key={item.id} item={item}/>
-                  ))}
-                </div>
-            )}
-          </div>
+           
+      
 
 
 
 
 
-          {/* Expenses */}
-          <div className="space-y-1">
-            {expensesItems.map((item) => (
-                <NavItem className={'flex gap-2'} key={item.id} item={item}/>
-            ))}
-          </div>
-
-            {/* Expenses */}
-          <div className="space-y-1">
-            {invoiceItems.map((item) => (
-                <NavItem className={'flex gap-2'} key={item.id} item={item}/>
-            ))}
-          </div>
 
         </CardContent>
 
